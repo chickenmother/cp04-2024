@@ -155,13 +155,14 @@
     var rest = 0;
     var etime = 0;
 
+
     
     // ボタンの初期設定
     function init(){
-        $('#btnA').prop('disabled', false);
+        $('#btnA').prop('disabled', true);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
-        
+        $("#btnA").css("background-color", "grey");
     }
 
     // Alarmの処理
