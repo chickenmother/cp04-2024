@@ -175,9 +175,7 @@
         img.onload = function(){
             ctx.drawImage(img, 0, 0, 300, 300);
         };
-        audio.play();
-
-        
+        audio.play(); 
     }
     
     // ButtonAがクリックされた時の処理
@@ -190,7 +188,6 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
-        
     }
 
     // ButtonCがクリックされた時の処理
@@ -199,7 +196,8 @@
         period = 60* parseInt( $("#minute").val() ) + parseInt( $("#second").val() );
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
-        
+        btnA.disabled = false;
+        $("#btnA").css("background-color", "yellow");
     }
     
  
@@ -211,6 +209,8 @@
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
+            btnA.disabled = true;
+            $("#btnA").css("background-color", "grey");
         }
         if(rest<=0){
             active=false;
