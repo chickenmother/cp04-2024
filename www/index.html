@@ -154,6 +154,8 @@
     var startTime = 0;
     var rest = 0;
     var etime = 0;
+    var stopTime=0;
+    var tmp_etime=0;
 
 
     
@@ -181,8 +183,13 @@
     
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
-        active = true;
-        startTime = new Date();
+        if(active==false && rest==0){
+            active = true;
+            startTime = new Date();
+        }else if(active==false && rest>0){
+            active=true;
+            startTime = new Date() - (etime) * 1000;
+        }
         
     }
 
@@ -191,6 +198,11 @@
         active = false;
         btnC.disabled = false;
         $("#btnC").css("background-color", "white");
+        btnA.disabled = false;
+        $("#btnA").css("background-color", "yellow");
+        $("#btnA").html("Resume");
+        
+        
     }
 
     // ButtonCがクリックされた時の処理
