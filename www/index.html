@@ -176,7 +176,7 @@
         img.onload = function(){
             ctx.drawImage(img, 0, 0, 300, 300);
         };
-        audio.play(); 
+            audio.play();
     }
     
     // ButtonAがクリックされた時の処理
@@ -217,7 +217,7 @@
             btnA.disabled = true;
             $("#btnA").css("background-color", "grey");
         }
-        if(rest<=0){
+        if(rest<=0 && etime>0){
             btnC.disabled = false;
             $("#btnC").css("background-color", "white");
             active=false;
