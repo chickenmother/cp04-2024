@@ -218,6 +218,8 @@
             $("#btnA").css("background-color", "grey");
         }
         if(rest<=0){
+            btnC.disabled = false;
+            $("#btnC").css("background-color", "white");
             active=false;
             alarm();
         }
