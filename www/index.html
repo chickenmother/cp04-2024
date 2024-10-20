@@ -154,6 +154,7 @@
     var startTime = 0;
     var rest = 0;
     var etime = 0;
+    var ring = true;
 
 
     
@@ -176,11 +177,14 @@
         img.onload = function(){
             ctx.drawImage(img, 0, 0, 300, 300);
         };
+        if(ring==true){    
             audio.play();
+        }
     }
     
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
+        ring=true;
         if(active==false && rest==0){
             active = true;
             startTime = new Date();
@@ -199,6 +203,7 @@
         btnA.disabled = false;
         $("#btnA").css("background-color", "yellow");
         $("#btnA").html("Resume");
+        ring=false;
         
         
     }
