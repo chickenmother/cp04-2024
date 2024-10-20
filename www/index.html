@@ -189,6 +189,8 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
+        btnC.disabled = false;
+        $("#btnC").css("background-color", "white");
     }
 
     // ButtonCがクリックされた時の処理
@@ -210,6 +212,8 @@
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
+            btnC.disabled = true;
+            $("#btnC").css("background-color", "grey");
             btnA.disabled = true;
             $("#btnA").css("background-color", "grey");
         }
